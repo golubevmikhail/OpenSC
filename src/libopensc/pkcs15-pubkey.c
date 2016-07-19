@@ -929,7 +929,6 @@ sc_pkcs15_read_pubkey(struct sc_pkcs15_card *p15card, const struct sc_pkcs15_obj
 
 	pubkey = calloc(1, sizeof(struct sc_pkcs15_pubkey));
 	if (pubkey == NULL) {
-		free(data);
 		LOG_FUNC_RETURN(ctx, SC_ERROR_OUT_OF_MEMORY);
 	}
 	pubkey->algorithm = algorithm;

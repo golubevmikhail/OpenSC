@@ -146,6 +146,8 @@ scconf_item *scconf_item_add(scconf_context * config, scconf_block * block, scco
 
 	if (type == SCCONF_ITEM_TYPE_BLOCK) {
 		scconf_block_copy((const scconf_block *) data, &dst);
+		if (!dst)
+			return NULL;
 		scconf_list_copy(dst->name, &parser.name);
 	}
 	scconf_item_add_internal(&parser, type);

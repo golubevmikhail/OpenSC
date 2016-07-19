@@ -905,7 +905,7 @@ sc_pkcs15_read_pubkey(struct sc_pkcs15_card *p15card, const struct sc_pkcs15_obj
 	size_t	len;
 	int	algorithm, r;
 
-	assert(p15card != NULL && obj != NULL && out != NULL);
+	assert(p15card != NULL && p15card->card != NULL && obj != NULL && out != NULL);
 	LOG_FUNC_CALLED(ctx);
 	sc_log(ctx, "Public key type 0x%X", obj->type);
 

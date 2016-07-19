@@ -2917,7 +2917,7 @@ sc_pkcs15init_new_object(int type, const char *label, struct sc_pkcs15_id *auth_
 		break;
 	case SC_PKCS15_TYPE_DATA_OBJECT:
 		object->flags = DEFAULT_DATA_FLAGS;
-		if (auth_id->len != 0)
+		if (auth_id && auth_id->len != 0)
 			object->flags |= SC_PKCS15_CO_FLAG_PRIVATE;
 		data_size = sizeof(struct sc_pkcs15_data_info);
 		break;

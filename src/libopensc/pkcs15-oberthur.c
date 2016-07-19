@@ -321,13 +321,13 @@ sc_oberthur_read_file(struct sc_pkcs15_card *p15card, const char *in_path,
 
 	sc_file_free(file);
 
+	*out_len = sz;
+
 	if (rv < 0)   {
 		free(*out);
 		*out = NULL;
 		*out_len = 0;
 	}
-
-	*out_len = sz;
 
 	LOG_FUNC_RETURN(ctx, rv);
 }

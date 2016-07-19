@@ -2307,7 +2307,7 @@ sc_pkcs15_read_file(struct sc_pkcs15_card *p15card, const struct sc_path *in_pat
 	size_t	len = 0, offset = 0;
 	int	r;
 
-	assert(p15card != NULL && in_path != NULL && buf != NULL);
+	assert(p15card != NULL && p15card->card != NULL && in_path != NULL && buf != NULL);
 
 	LOG_FUNC_CALLED(ctx);
 	sc_log(ctx, "path=%s, index=%u, count=%d", sc_print_path(in_path), in_path->index, in_path->count);
